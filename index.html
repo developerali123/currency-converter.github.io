@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Currency Converter</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
+	</script>
+        <style>
+			*{
+				box-sizing: border-box;
+				padding: 0;
+				margin: 0;
+			}
+            body {
+                background-image: url("currency converter.jpg");
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                min-height:100vh;
+				font-family: sans-serif;
+}
+
+.heading {
+	margin: 35px auto 20px auto;
+    text-decoration: underline red solid;
+    font-size: 50px;
+}
+
+#main {
+	width: 50%;
+	margin: auto;
+	padding: 30px;
+	border-radius: 5px;
+	background-image: linear-gradient(to right, rgb(122, 255, 99), rgb(138, 225, 121), rgb(153, 195, 142), rgb(169, 166, 164), rgb(184, 136, 185), rgb(200, 106, 207), rgb(206, 91, 176), rgb(212, 77, 144), rgb(218, 62, 113), rgb(223, 47, 81), rgb(229, 33, 50), rgb(235, 18, 18));
+	color: white;
+}
+
+label {
+	font-size: 25px;
+	display: block;
+}
+
+.btn {
+	width: 200px;
+}
+
+#finalAmount {
+	margin: 50px auto;
+}
+
+#finalAmount h2 {
+	font-size: 50px;
+}
+#finalAmount span{
+	color:green;
+}
+@media screen and (max-width:768px) {
+	#main{
+		width: 90%;
+	}
+	.heading{
+		font-size: 30px;
+	}
+	#finalAmount{
+		margin:10px auto;
+	}
+	#finalAmount h2{
+		font-size: 25px;
+	}
+}
+
+        </style>
+</head>
+
+<body>
+
+	<!-- Currency Converter -->
+	<h1 class="heading text-center">
+		Currency Converter</h1>
+	<div class="container" id="main">
+		<div id="form">
+			<label for="">currency amount:</label>
+			<input type="text" class="form-control mb-3" placeholder="0.00" id="input">
+		</div>
+		<div class="row">
+					<div class="col-sm-6">
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text">From</span>
+							</div>
+							<select class="form-control custom-select" id="currency1">
+								<option value="">Select One …</option>
+								<option value="USD">USD</option>
+								<option value="AED">AED</option>
+								<option value="ARS">ARS</option>
+								<option value="AUD">AUD</option>
+								<option value="BGN">BGN</option>
+								<option value="BRL">BRL</option>
+								<option value="BSD">BSD</option>
+								<option value="CAD">CAD</option>
+								<option value="CHF">CHF</option>
+								<option value="CLP">CLP</option>
+								<option value="CNY">CNY</option>
+								<option value="COP">COP</option>
+								<option value="CZK">CZK</option>
+								<option value="DKK">DKK</option>
+								<option value="DOP">DOP</option>
+								<option value="EGP">EGP</option>
+								<option value="EUR">EUR</option>
+								<option value="FJD">FJD</option>
+								<option value="GBP">GBP</option>
+								<option value="GTQ">GTQ</option>
+								<option value="HKD">HKD</option>
+								<option value="HRK">HRK</option>
+								<option value="HUF">HUF</option>
+								<option value="IDR">IDR</option>
+								<option value="ILS">ILS</option>
+								<option value="INR">INR</option>
+								<option value="ISK">ISK</option>
+								<option value="JPY">JPY</option>
+								<option value="KRW">KRW</option>
+								<option value="KZT">KZT</option>
+								<option value="MVR">MVR</option>
+								<option value="MXN">MXN</option>
+								<option value="MYR">MYR</option>
+								<option value="NOK">NOK</option>
+								<option value="NZD">NZD</option>
+								<option value="PAB">PAB</option>
+								<option value="PEN">PEN</option>
+								<option value="PHP">PHP</option>
+								<option value="PKR">PKR</option>
+								<option value="PLN">PLN</option>
+								<option value="PYG">PYG</option>
+								<option value="RON">RON</option>
+								<option value="RUB">RUB</option>
+								<option value="SAR">SAR</option>
+								<option value="SEK">SEK</option>
+								<option value="SGD">SGD</option>
+								<option value="THB">THB</option>
+								<option value="TRY">TRY</option>
+								<option value="TWD">TWD</option>
+								<option value="UAH">UAH</option>
+								<option value="UYU">UYU</option>
+								<option value="ZAR">ZAR</option>
+							</select>
+						</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text">To</span>
+				</div>
+				<select class="form-control custom-select" id="currency2">
+					<option value="">Select One …</option>
+					<option value="USD">USD</option>
+					<option value="AED">AED</option>
+					<option value="ARS">ARS</option>
+					<option value="AUD">AUD</option>
+					<option value="BGN">BGN</option>
+					<option value="BRL">BRL</option>
+					<option value="BSD">BSD</option>
+					<option value="CAD">CAD</option>
+					<option value="CHF">CHF</option>
+					<option value="CLP">CLP</option>
+					<option value="CNY">CNY</option>
+					<option value="COP">COP</option>
+					<option value="CZK">CZK</option>
+					<option value="DKK">DKK</option>
+					<option value="DOP">DOP</option>
+					<option value="EGP">EGP</option>
+					<option value="EUR">EUR</option>
+					<option value="FJD">FJD</option>
+					<option value="GBP">GBP</option>
+					<option value="GTQ">GTQ</option>
+					<option value="HKD">HKD</option>
+					<option value="HRK">HRK</option>
+					<option value="HUF">HUF</option>
+					<option value="IDR">IDR</option>
+					<option value="ILS">ILS</option>
+					<option value="INR">INR</option>
+					<option value="ISK">ISK</option>
+					<option value="JPY">JPY</option>
+					<option value="KRW">KRW</option>
+					<option value="KZT">KZT</option>
+					<option value="MVR">MVR</option>
+					<option value="MXN">MXN</option>
+					<option value="MYR">MYR</option>
+					<option value="NOK">NOK</option>
+					<option value="NZD">NZD</option>
+					<option value="PAB">PAB</option>
+					<option value="PEN">PEN</option>
+					<option value="PHP">PHP</option>
+					<option value="PKR">PKR</option>
+					<option value="PLN">PLN</option>
+					<option value="PYG">PYG</option>
+					<option value="RON">RON</option>
+					<option value="RUB">RUB</option>
+					<option value="SAR">SAR</option>
+					<option value="SEK">SEK</option>
+					<option value="SGD">SGD</option>
+					<option value="THB">THB</option>
+					<option value="TRY">TRY</option>
+					<option value="TWD">TWD</option>
+					<option value="UAH">UAH</option>
+					<option value="UYU">UYU</option>
+					<option value="ZAR">ZAR</option>
+				</select>
+			</div>
+		</div>
+				
+			</div>
+
+			<div class="text-center">
+				<button class="btn btn-primary m-2" id="convert" type="submit">Convert</button>
+				<button class="btn btn-primary m-2" onclick="clearVal()">Reset</button>
+			</div>
+			<div id="finalAmount" class="text-center"></div>
+		</div>
+    <script>
+
+// for selecting different controls
+var search = document.getElementById("input");
+var convert = document.getElementById("convert");
+var fromCurrecy = document.getElementById("currency1");
+var toCurrecy = document.getElementById("currency2");
+var finalAmount = document.getElementById("finalAmount");
+var resultFrom;
+var resultTo;
+var searchValue;
+
+// Event when currency is changed
+fromCurrecy.addEventListener('change', (event) => {
+	resultFrom = `${event.target.value}`;
+});
+
+// Event when currency is changed
+toCurrecy.addEventListener('change', (event) => {
+	resultTo = `${event.target.value}`;
+});
+
+search.addEventListener('input', updateValue);
+
+// function for updating value
+function updateValue(e) {
+	searchValue = e.target.value;
+}
+
+// when user clicks, it calls function getresults
+convert.addEventListener("click", getResults);
+
+// function getresults
+function getResults() {
+	fetch("https://api.exchangerate-api.com/v4/latest/USD")
+		.then(currency => {
+			return currency.json();
+		}).then(displayResults);
+}
+
+// display results after convertion
+function displayResults(currency) {
+	let fromRate = currency.rates[resultFrom];
+	let toRate = currency.rates[resultTo];
+	let finalvalue=((toRate / fromRate) * searchValue).toFixed(2);
+	finalAmount.innerHTML=`<h2>Converted amount: <span>${finalvalue}</span></h2>`;
+}
+
+// when user click on reset button
+function clearVal() {
+	window.location.reload();
+	finalAmount.innerHTML = "";
+};
+
+    </script>
+</body>
+
+</html>
