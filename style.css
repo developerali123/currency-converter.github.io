@@ -1,0 +1,61 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-image: url("currency converter.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    min-height:100vh;
+    font-family: sans-serif;
+}
+
+.heading {
+margin: 35px auto 20px auto;
+text-decoration: underline red solid;
+font-size: 50px;
+}
+
+#main {
+width: 50%;
+margin: auto;
+padding: 30px;
+border-radius: 5px;
+background-image: linear-gradient(to right, rgb(122, 255, 99), rgb(138, 225, 121), rgb(153, 195, 142), rgb(169, 166, 164), rgb(184, 136, 185), rgb(200, 106, 207), rgb(206, 91, 176), rgb(212, 77, 144), rgb(218, 62, 113), rgb(223, 47, 81), rgb(229, 33, 50), rgb(235, 18, 18));
+color: white;
+}
+
+label {
+font-size: 25px;
+display: block;
+}
+
+.btn {
+width: 200px;
+}
+
+#finalAmount {
+margin: 50px auto;
+}
+
+#finalAmount h2 {
+font-size: 50px;
+}
+#finalAmount span{
+color:green;
+}
+@media screen and (max-width:768px) {
+#main{
+width: 90%;
+}
+.heading{
+font-size: 30px;
+}
+#finalAmount{
+margin:10px auto;
+}
+#finalAmount h2{
+font-size: 25px;
+}
+}
